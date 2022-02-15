@@ -1,0 +1,9 @@
+{
+  "files.exclude": {
+    "**/yarn-debug.log*": true,
+    "**/yarn-error.log*": true,
+    "**/node_modules/": true,
+    "**/.yarn-integrity": true,
+    "**/.next/": true,
+  }
+}
