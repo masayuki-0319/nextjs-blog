@@ -5,7 +5,11 @@ type Props = {};
 export const PostDetailPage: NextPage<Props> = (props) => {
   const {} = props;
 
-  return <></>;
+  return (
+    <>
+      <h1>PostDetail Page</h1>
+    </>
+  );
 };
 
 export default PostDetailPage;
