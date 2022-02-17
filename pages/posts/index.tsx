@@ -1,5 +1,5 @@
-import type { NextPage } from 'next';
-import { FeaturedPosts } from '../components/home-page/featured-posts';
+import { NextPage } from 'next';
+import { AllPosts } from '../../components/posts/all-posts';
 
 const dummyPosts: NotionPageDetail[] = [
   {
@@ -154,12 +154,18 @@ const dummyPosts: NotionPageDetail[] = [
   },
 ];
 
-const Home: NextPage = () => {
+type Props = {};
+
+export const AllPostPage: NextPage<Props> = (props) => {
+  const {} = props;
+
+  const posts = dummyPosts;
+
   return (
     <>
-      <FeaturedPosts posts={dummyPosts} />
+      <AllPosts posts={posts} />
     </>
   );
 };
 
-export default Home;
+export default AllPostPage;
