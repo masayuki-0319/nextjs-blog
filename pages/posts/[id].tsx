@@ -1,5 +1,18 @@
-import { NextPage } from 'next';
+import { NextPage, InferGetStaticPropsType, GetStaticPropsContext } from 'next';
 import { PostContent } from '../../components/posts/post-detail/post-content';
+
+type Props = InferGetStaticPropsType<typeof getStaticProps>;
+
+export const PostDetailPage: NextPage<Props> = (props) => {
+  const { post } = props.params;
+
+  return (
+    <>
+      <h1>PostDetail Page</h1>
+      {post && <PostContent post={post} />}
+    </>
+  );
+};
 
 const dummyPosts: NotionPageDetail[] = [
   {
@@ -154,18 +167,33 @@ const dummyPosts: NotionPageDetail[] = [
   },
 ];
 
-type Props = {};
+export const getStaticProps = async (context: GetStaticPropsContext) => {
+  const postId = context.params!.id as string;
 
-export const PostDetailPage: NextPage<Props> = (props) => {
-  const {} = props;
-  const post = dummyPosts[0];
+  const post = dummyPosts.find((post) => post.id === postId);
 
-  return (
-    <>
-      <h1>PostDetail Page</h1>
-      <PostContent post={post} />
-    </>
-  );
+  return {
+    props: {
+      params: {
+        post: post,
+      },
+    },
+  };
+};
+
+export const getStaticPaths = async () => {
+  const paths = dummyPosts.map((dummy) => {
+    return {
+      params: {
+        id: dummy.id,
+      },
+    };
+  });
+
+  return {
+    paths: paths,
+    fallback: false,
+  };
 };
 
 export default PostDetailPage;
