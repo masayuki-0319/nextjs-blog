@@ -12,6 +12,19 @@ type NotionPageDetail = {
   last_edited_time: string;
   archived: boolean;
   url: string;
+  properties: {
+    title: {
+      id: string;
+      type: string;
+      title: {
+        text: {
+          content: string;
+          link: any;
+        };
+        plain_text: string;
+      }[];
+    };
+  };
   [k: string]: any;
 };
 

@@ -6,8 +6,9 @@ type Props = {
 };
 
 export const PostItem: VFC<Props> = (props) => {
-  const { id, url, created_time, last_edited_time } = props.post;
+  const { id, url, created_time, last_edited_time, properties } = props.post;
 
+  const title = properties.title.title[0].plain_text;
   const linkPath = `posts/${id}`;
 
   const formattedDate = (date: string) => {
@@ -23,7 +24,9 @@ export const PostItem: VFC<Props> = (props) => {
       <Link href={linkPath}>
         <a>
           <div>
-            <h3>{id}</h3>
+            <h3>タイトル：{title ?? 'null'}</h3>
+            <h4>Notion ID</h4>
+            <p>{id}</p>
             <h4>作成日時</h4>
             <time>{formattedDate(created_time)}</time>
             <h4>更新日時</h4>
