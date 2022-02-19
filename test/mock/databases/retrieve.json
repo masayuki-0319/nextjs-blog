@@ -1,0 +1,319 @@
+{
+  "object": "database",
+  "id": "8e2773f5-9b16-41ef-97c0-f636ad93ab46",
+  "cover": null,
+  "icon": null,
+  "created_time": "2022-01-17T15:14:00.000Z",
+  "created_by": {
+    "object": "user",
+    "id": "800814e1-bc23-42a7-b691-d47a2d6cf825"
+  },
+  "last_edited_by": {
+    "object": "user",
+    "id": "800814e1-bc23-42a7-b691-d47a2d6cf825"
+  },
+  "last_edited_time": "2022-02-17T01:27:00.000Z",
+  "title": [
+    {
+      "type": "text",
+      "text": {
+        "content": "articles",
+        "link": null
+      },
+      "annotations": {
+        "bold": false,
+        "italic": false,
+        "strikethrough": false,
+        "underline": false,
+        "code": false,
+        "color": "default"
+      },
+      "plain_text": "articles",
+      "href": null
+    }
+  ],
+  "properties": {
+    "status": {
+      "id": "Auw%3A",
+      "name": "status",
+      "type": "select",
+      "select": {
+        "options": [
+          {
+            "id": "5ebfce43-4bab-43a3-a89b-23dc7724df4b",
+            "name": "wip",
+            "color": "red"
+          },
+          {
+            "id": "3cdd4c7c-d02f-419c-b1cf-d0553ddee016",
+            "name": "pending",
+            "color": "yellow"
+          },
+          {
+            "id": "e808e6aa-679d-4af6-9627-3fa46f14395c",
+            "name": "done",
+            "color": "green"
+          }
+        ]
+      }
+    },
+    "layer": {
+      "id": "I%3FdA",
+      "name": "layer",
+      "type": "select",
+      "select": {
+        "options": [
+          {
+            "id": "96a1646c-05fa-449b-bdc8-248d2557c64e",
+            "name": "backlog",
+            "color": "blue"
+          },
+          {
+            "id": "ac642629-5da4-4ef4-abda-b6b578169476",
+            "name": "backlog_item",
+            "color": "red"
+          },
+          {
+            "id": "25778aa3-aa3e-47d2-853d-23d3033004cc",
+            "name": "backlog_sub_task",
+            "color": "yellow"
+          },
+          {
+            "id": "373e4bae-c283-4019-8f2c-38b11204cb47",
+            "name": "instant_issue",
+            "color": "green"
+          },
+          {
+            "id": "547defc7-f592-4b20-a539-78f121b4145b",
+            "name": "interest",
+            "color": "green"
+          },
+          {
+            "id": "a6bb1e4a-afd8-4bf1-a9d0-159127dbcfb7",
+            "name": "learn",
+            "color": "green"
+          },
+          {
+            "id": "d23283c9-abfc-4482-a784-2528cc470e08",
+            "name": "essay",
+            "color": "green"
+          },
+          {
+            "id": "0d936246-fedd-40e1-bfb2-531788ff4d8c",
+            "name": "_site",
+            "color": "orange"
+          },
+          {
+            "id": "6590c820-8c49-4bb2-957a-2ff78d2a20a0",
+            "name": "manual",
+            "color": "brown"
+          },
+          {
+            "id": "9883e41b-5ba9-4cfb-b040-a7dfd2344efc",
+            "name": "project",
+            "color": "pink"
+          }
+        ]
+      }
+    },
+    "tags": {
+      "id": "NRXC",
+      "name": "tags",
+      "type": "multi_select",
+      "multi_select": {
+        "options": [
+          {
+            "id": "8d17594b-402b-49e3-9ec0-04f7c549b24f",
+            "name": "career",
+            "color": "orange"
+          },
+          {
+            "id": "f80d6b5a-abab-4998-92fb-0078740a4ee8",
+            "name": "notion",
+            "color": "brown"
+          },
+          {
+            "id": "9843ffd9-5f9b-412b-9bca-457556e3def1",
+            "name": "private_project",
+            "color": "default"
+          },
+          {
+            "id": "c6107428-9cec-42a0-b056-2a033dbe472b",
+            "name": "oss",
+            "color": "pink"
+          },
+          {
+            "id": "8b54455a-7676-4faf-91d4-18f19be9d078",
+            "name": "next.js",
+            "color": "blue"
+          },
+          {
+            "id": "e929a843-a87d-4f3c-b5a2-654aa87beda8",
+            "name": "business",
+            "color": "red"
+          },
+          {
+            "id": "e2a192cf-9087-499c-ac51-97311796109a",
+            "name": "poem",
+            "color": "yellow"
+          },
+          {
+            "id": "c4b49b6b-929d-4bf4-94e6-b58f407da566",
+            "name": "figma",
+            "color": "purple"
+          },
+          {
+            "id": "75640cf6-17b8-4db7-8975-29518bbac3ca",
+            "name": "xapi",
+            "color": "green"
+          },
+          {
+            "id": "5e248e19-06fb-4a45-85f0-821b2a2c416b",
+            "name": "_site",
+            "color": "gray"
+          },
+          {
+            "id": "5becf291-8c48-450b-b35a-87bcc6e57aa6",
+            "name": "private",
+            "color": "default"
+          },
+          {
+            "id": "27e04add-490d-4abd-bb9d-0035a59d2f62",
+            "name": "management",
+            "color": "purple"
+          },
+          {
+            "id": "910d2af8-996a-4140-967a-eeaf4872c9af",
+            "name": "lifestyle",
+            "color": "blue"
+          },
+          {
+            "id": "6f7265a1-09fe-4e16-b60c-82166f1ebf7a",
+            "name": "blog",
+            "color": "yellow"
+          },
+          {
+            "id": "341682e4-d0e1-4718-b15d-4d3be920d744",
+            "name": "learning_record",
+            "color": "gray"
+          },
+          {
+            "id": "f99babc4-4299-4b07-ad7c-38f61ef1efd8",
+            "name": "deno",
+            "color": "blue"
+          },
+          {
+            "id": "bd2cea99-a7ed-493d-8a3d-ab201ba17a64",
+            "name": "chrome_extension",
+            "color": "pink"
+          },
+          {
+            "id": "f0f17f61-3e25-4aec-ac71-633b23ad2250",
+            "name": "game",
+            "color": "pink"
+          },
+          {
+            "id": "3edafe17-5eca-4f9b-a98f-b706c52b7e56",
+            "name": "database",
+            "color": "green"
+          },
+          {
+            "id": "f644ef3a-e78a-4d2a-94e0-0e837763077c",
+            "name": "udemy",
+            "color": "default"
+          },
+          {
+            "id": "e064035e-3a20-46d4-a54f-4d2bd7631188",
+            "name": "authorization",
+            "color": "brown"
+          }
+        ]
+      }
+    },
+    "created_time": {
+      "id": "Pt%40h",
+      "name": "created_time",
+      "type": "created_time",
+      "created_time": {}
+    },
+    "parent_issue_id": {
+      "id": "%5DoGL",
+      "name": "parent_issue_id",
+      "type": "relation",
+      "relation": {
+        "database_id": "8e2773f5-9b16-41ef-97c0-f636ad93ab46",
+        "synced_property_name": "child_issue_id",
+        "synced_property_id": "ll<l"
+      }
+    },
+    "sprint": {
+      "id": "dL%7CM",
+      "name": "sprint",
+      "type": "select",
+      "select": {
+        "options": [
+          {
+            "id": "6c077426-5781-47d1-b4b9-0e2c3b7d405b",
+            "name": "open",
+            "color": "red"
+          },
+          {
+            "id": "i=~r",
+            "name": "not_started",
+            "color": "yellow"
+          },
+          {
+            "id": "b72c26eb-5f38-4f05-8f2d-3ae78917a4b5",
+            "name": "cancel",
+            "color": "default"
+          },
+          {
+            "id": "1e29cc70-e451-4c5a-97e8-4c596cb8df93",
+            "name": "done",
+            "color": "green"
+          }
+        ]
+      }
+    },
+    "description": {
+      "id": "hu%5B%3E",
+      "name": "description",
+      "type": "rich_text",
+      "rich_text": {}
+    },
+    "child_issue_id": {
+      "id": "ll%3Cl",
+      "name": "child_issue_id",
+      "type": "relation",
+      "relation": {
+        "database_id": "8e2773f5-9b16-41ef-97c0-f636ad93ab46",
+        "synced_property_name": "parent_issue_id",
+        "synced_property_id": "]oGL"
+      }
+    },
+    "last_edited_time": {
+      "id": "pGu%3E",
+      "name": "last_edited_time",
+      "type": "last_edited_time",
+      "last_edited_time": {}
+    },
+    "is_published": {
+      "id": "zv%5Ej",
+      "name": "is_published",
+      "type": "checkbox",
+      "checkbox": {}
+    },
+    "title": {
+      "id": "title",
+      "name": "title",
+      "type": "title",
+      "title": {}
+    }
+  },
+  "parent": {
+    "type": "page_id",
+    "page_id": "e9d9d95b-02f7-4986-bba8-8c74c965cfa6"
+  },
+  "url": "https://www.notion.so/8e2773f59b1641ef97c0f636ad93ab46",
+  "archived": false
+}
