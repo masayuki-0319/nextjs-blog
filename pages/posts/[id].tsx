@@ -1,3 +1,4 @@
+import ky from 'ky';
 import { NextPage, InferGetStaticPropsType, GetStaticPropsContext } from 'next';
 import { PostContent } from '../../components/posts/post-detail/post-content';
 
@@ -15,17 +16,11 @@ export const PostDetailPage: NextPage<Props> = (props) => {
 };
 
 export const getStaticProps = async (context: GetStaticPropsContext) => {
-  const id = context.params!.id as string;
-
-  const response = await fetch('http://localhost:3000/api/databases/query?page_size=10', {
-    method: 'GET',
-    headers: {
-      'content-type': 'application/json',
-    },
-  });
-
+  const url = 'http://localhost:3000/api/databases/query';
+  const response = await ky.get(url);
   const posts = (await response.json()) as NotionPageDetail[];
 
+  const id = context.params!.id as string;
   const post = posts.find((post) => post.id === id);
 
   return {
@@ -38,13 +33,8 @@ export const getStaticProps = async (context: GetStaticPropsContext) => {
 };
 
 export const getStaticPaths = async () => {
-  const response = await fetch('http://localhost:3000/api/databases/query?page_size=10', {
-    method: 'GET',
-    headers: {
-      'content-type': 'application/json',
-    },
-  });
-
+  const url = 'http://localhost:3000/api/databases/query';
+  const response = await ky.get(url);
   const posts = (await response.json()) as NotionPageDetail[];
 
   const paths = posts.map((post) => {
