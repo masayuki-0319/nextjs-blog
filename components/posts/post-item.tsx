@@ -21,21 +21,19 @@ export const PostItem: VFC<Props> = (props) => {
 
   return (
     <li>
-      <Link href={linkPath}>
-        <a>
-          <div>
-            <h3>タイトル：{title ?? 'null'}</h3>
-            <h4>Notion ID</h4>
-            <p>{id}</p>
-            <h4>作成日時</h4>
-            <time>{formattedDate(created_time)}</time>
-            <h4>更新日時</h4>
-            <time>{formattedDate(last_edited_time)}</time>
-            <h4>Notion Page URL</h4>
-            <Link href={url}>Notion へ移動</Link>
-          </div>
-        </a>
-      </Link>
+      <div>
+        <Link href={linkPath}>
+          <h3>タイトル：{title ?? 'null'}</h3>
+        </Link>
+        <h4>Notion ID</h4>
+        <p>{id}</p>
+        <h4>作成日時</h4>
+        <time>{formattedDate(created_time)}</time>
+        <h4>更新日時</h4>
+        <time>{formattedDate(last_edited_time)}</time>
+        <h4>Notion Page URL</h4>
+        <Link href={url}>Notion へ移動</Link>
+      </div>
     </li>
   );
 };
