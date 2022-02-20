@@ -1,6 +1,7 @@
-import ky from 'ky';
 import { GetStaticPropsContext, InferGetStaticPropsType, NextPage } from 'next';
+
 import { AllPosts } from '../../components/posts/all-posts';
+import { getArticles } from '../../lib/api/routes/articles/get-articles';
 
 type Props = InferGetStaticPropsType<typeof getStaticProps>;
 
@@ -15,9 +16,7 @@ export const AllPostPage: NextPage<Props> = (props) => {
 };
 
 export const getStaticProps = async (context: GetStaticPropsContext) => {
-  const url = 'http://localhost:3000/api/databases/query';
-  const response = await ky.get(url);
-  const posts = (await response.json()) as NotionPageDetail[];
+  const posts = await getArticles();
 
   return {
     props: {
