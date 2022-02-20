@@ -1,29 +1,29 @@
 import { GetStaticPropsContext, InferGetStaticPropsType, NextPage } from 'next';
-import { AllPosts } from '../../components/articles/all-posts';
+import { AllArticles } from '../../components/articles/all-articles';
 import { getArticles } from '../../lib/api/routes/articles/get-articles';
 
 type Props = InferGetStaticPropsType<typeof getStaticProps>;
 
-export const AllPostPage: NextPage<Props> = (props) => {
-  const { posts } = props.params;
+export const AllArticlesPage: NextPage<Props> = (props) => {
+  const { articles } = props.params;
 
   return (
     <>
-      <AllPosts posts={posts} />
+      <AllArticles articles={articles} />
     </>
   );
 };
 
 export const getStaticProps = async (context: GetStaticPropsContext) => {
-  const posts = await getArticles();
+  const articles = await getArticles();
 
   return {
     props: {
       params: {
-        posts: posts,
+        articles: articles,
       },
     },
   };
 };
 
-export default AllPostPage;
+export default AllArticlesPage;

@@ -2,14 +2,14 @@ import Link from 'next/link';
 import { VFC } from 'react';
 
 type Props = {
-  post: NotionPageDetail;
+  article: NotionPageDetail;
 };
 
-export const PostItem: VFC<Props> = (props) => {
-  const { id, url, created_time, last_edited_time, properties } = props.post;
+export const ArticleItem: VFC<Props> = (props) => {
+  const { id, url, created_time, last_edited_time, properties } = props.article;
 
   const title = properties.title.title[0].plain_text;
-  const linkPath = `posts/${id}`;
+  const linkPath = `articles/${id}`;
 
   const formattedDate = (date: string) => {
     return new Date(date).toLocaleDateString('en-US', {

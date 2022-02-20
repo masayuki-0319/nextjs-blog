@@ -1,27 +1,27 @@
 import type { GetStaticPropsContext, InferGetStaticPropsType, NextPage } from 'next';
 
-import { FeaturedPosts } from '../components/home-page/featured-posts';
+import { FeaturedArticles } from '../components/home-page/featured-articles';
 import { getArticles } from '../lib/api/routes/articles/get-articles';
 
 type Props = InferGetStaticPropsType<typeof getStaticProps>;
 
 const Home: NextPage<Props> = (props) => {
-  const { posts } = props.params;
+  const { articles } = props.params;
 
   return (
     <>
-      <FeaturedPosts posts={posts} />
+      <FeaturedArticles articles={articles} />
     </>
   );
 };
 
 export const getStaticProps = async (context: GetStaticPropsContext) => {
-  const posts = await getArticles();
+  const articles = await getArticles();
 
   return {
     props: {
       params: {
-        posts: posts,
+        articles: articles,
       },
     },
   };
