@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 
-import { getDatabaseRecord } from './../../../lib/api/notion/get-database-record';
+import { getDatabaseRecord } from '../../lib/api/notion/get-database-record';
 
 interface DatabasesRequest extends NextApiRequest {}
 interface DatabasesResponse extends NextApiResponse {}
