@@ -1,4 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
+import { getBlockChildren } from '../../../lib/api/notion/get-block-children';
 
 interface BlockChildrenRequest extends NextApiRequest {
   query: {
@@ -12,9 +13,9 @@ const handler = async (req: BlockChildrenRequest, res: BlockChildrenResponse) =>
     if (req.method === 'GET') {
       const blockId = req.query.blockId;
 
-      const resonse = {
-        message: `Block ID is [${blockId}]`,
-      };
+      const blockChildren = await getBlockChildren({ blockId });
+
+      const resonse = [...blockChildren];
 
       res.status(200).json(resonse);
       return;
