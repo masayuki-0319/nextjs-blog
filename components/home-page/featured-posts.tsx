@@ -1,5 +1,5 @@
 import { VFC } from 'react';
-import { PostsGrid } from '../posts/posts-grid';
+import { PostsGrid } from '../articles/posts-grid';
 
 type Props = {
   posts: NotionPageDetail[];

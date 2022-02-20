@@ -1,6 +1,5 @@
 import { GetStaticPropsContext, InferGetStaticPropsType, NextPage } from 'next';
-
-import { AllPosts } from '../../components/posts/all-posts';
+import { AllPosts } from '../../components/articles/all-posts';
 import { getArticles } from '../../lib/api/routes/articles/get-articles';
 
 type Props = InferGetStaticPropsType<typeof getStaticProps>;
