@@ -12,7 +12,7 @@ export const MainNavigation: VFC<Props> = (props) => {
         <Link href="/">Home</Link>
         <ul>
           <li>
-            <Link href="/posts">Posts</Link>
+            <Link href="/articles">Articles</Link>
           </li>
         </ul>
       </nav>

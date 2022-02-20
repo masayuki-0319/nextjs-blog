@@ -1,43 +1,43 @@
 import { NextPage, InferGetStaticPropsType, GetStaticPropsContext } from 'next';
 
-import { PostContent } from '../../components/posts/post-detail/post-content';
+import { ArticleContent } from '../../components/articles/article-detail/article-content';
 import { getArticles } from '../../lib/api/routes/articles/get-articles';
 
 type Props = InferGetStaticPropsType<typeof getStaticProps>;
 
-export const PostDetailPage: NextPage<Props> = (props) => {
-  const { post } = props.params;
+export const ArticleDetailPage: NextPage<Props> = (props) => {
+  const { article } = props.params;
 
   return (
     <>
-      <h1>PostDetail Page</h1>
-      {post && <PostContent post={post} />}
+      <h1>ArticleDetail Page</h1>
+      {article && <ArticleContent article={article} />}
     </>
   );
 };
 
 export const getStaticProps = async (context: GetStaticPropsContext) => {
-  const posts = await getArticles();
+  const articles = await getArticles();
 
   const id = context.params!.id as string;
-  const post = posts.find((post) => post.id === id);
+  const article = articles.find((article) => article.id === id);
 
   return {
     props: {
       params: {
-        post: post,
+        article: article,
       },
     },
   };
 };
 
 export const getStaticPaths = async () => {
-  const posts = await getArticles();
+  const articles = await getArticles();
 
-  const paths = posts.map((post) => {
+  const paths = articles.map((article) => {
     return {
       params: {
-        id: post.id,
+        id: article.id,
       },
     };
   });
@@ -48,4 +48,4 @@ export const getStaticPaths = async () => {
   };
 };
 
-export default PostDetailPage;
+export default ArticleDetailPage;
