@@ -1,5 +1,7 @@
 import { NextPage, InferGetStaticPropsType, GetStaticPropsContext } from 'next';
+
 import { PostContent } from '../../components/posts/post-detail/post-content';
+import { getArticles } from '../../lib/api/routes/articles/get-articles';
 
 type Props = InferGetStaticPropsType<typeof getStaticProps>;
 
@@ -15,17 +17,9 @@ export const PostDetailPage: NextPage<Props> = (props) => {
 };
 
 export const getStaticProps = async (context: GetStaticPropsContext) => {
+  const posts = await getArticles();
+
   const id = context.params!.id as string;
-
-  const response = await fetch('http://localhost:3000/api/databases/query?page_size=10', {
-    method: 'GET',
-    headers: {
-      'content-type': 'application/json',
-    },
-  });
-
-  const posts = (await response.json()) as NotionPageDetail[];
-
   const post = posts.find((post) => post.id === id);
 
   return {
@@ -38,14 +32,7 @@ export const getStaticProps = async (context: GetStaticPropsContext) => {
 };
 
 export const getStaticPaths = async () => {
-  const response = await fetch('http://localhost:3000/api/databases/query?page_size=10', {
-    method: 'GET',
-    headers: {
-      'content-type': 'application/json',
-    },
-  });
-
-  const posts = (await response.json()) as NotionPageDetail[];
+  const posts = await getArticles();
 
   const paths = posts.map((post) => {
     return {

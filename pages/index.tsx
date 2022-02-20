@@ -1,5 +1,7 @@
 import type { GetStaticPropsContext, InferGetStaticPropsType, NextPage } from 'next';
+
 import { FeaturedPosts } from '../components/home-page/featured-posts';
+import { getArticles } from '../lib/api/routes/articles/get-articles';
 
 type Props = InferGetStaticPropsType<typeof getStaticProps>;
 
@@ -14,14 +16,7 @@ const Home: NextPage<Props> = (props) => {
 };
 
 export const getStaticProps = async (context: GetStaticPropsContext) => {
-  const response = await fetch('http://localhost:3000/api/databases/query?page_size=10', {
-    method: 'GET',
-    headers: {
-      'content-type': 'application/json',
-    },
-  });
-
-  const posts = (await response.json()) as NotionPageDetail[];
+  const posts = await getArticles();
 
   return {
     props: {
