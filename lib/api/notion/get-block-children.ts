@@ -6,19 +6,28 @@ type Params = {
 };
 
 export const getBlockChildren = async (params: Params) => {
-  const { pageSize = 10, blockId } = params;
+  const { pageSize = 50, blockId } = params;
+
+  let blockChildren: any[] = [];
 
   let queryParams = {
     block_id: blockId,
     page_size: pageSize,
   };
-  let blockChildren: any[] = [];
 
-  const response = await notionClient.blocks.children.list(queryParams);
+  while (true) {
+    const response = await notionClient.blocks.children.list(queryParams);
 
-  const responseResults = response.results;
+    const { results, next_cursor, has_more } = response;
 
-  blockChildren.push(...responseResults);
+    blockChildren.push(...results);
+
+    if (has_more && next_cursor) {
+      queryParams = { ...queryParams, ...{ start_cursor: next_cursor } };
+    } else {
+      break;
+    }
+  }
 
   return blockChildren;
 };
